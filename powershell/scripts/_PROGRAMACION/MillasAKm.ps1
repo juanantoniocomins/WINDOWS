@@ -1,0 +1,1 @@
+# Script: MillasAKm.ps1# Convierte millas a kilómetros$millas = [double](Read-Host "Introduce la distancia en millas")# 1 milla = 1.60934 km$kms = $millas * 1.60934Write-Host "$millas millas equivalen a $kms kilómetros"
