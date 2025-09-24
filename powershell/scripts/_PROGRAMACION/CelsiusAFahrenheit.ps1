@@ -1,23 +1,18 @@
-<#
-  CelsiusAFahrenheit.ps1
-  Conversión simple entre °C y °F con menú.
-#>
+# ==========================================================
+# Nombre del archivo: CelsiusAFahrenheit.ps1
+# Descripción: Convierte una temperatura de Celsius a Fahrenheit.
+# Autor: Asistente Gemini
+# ==========================================================
 
-Write-Host "Conversión de temperatura"
-Write-Host "1) Celsius -> Fahrenheit"
-Write-Host "2) Fahrenheit -> Celsius"
-$op = Read-Host "Elige opción (1/2)"
+# Pedir al usuario que introduzca la temperatura en Celsius
+Write-Host "Introduce la temperatura en grados Celsius:"
+$celsius = Read-Host
 
-switch ($op) {
-  '1' {
-    [double]$c = Read-Host "Introduce °C"
-    $f = ($c * 9/5) + 32
-    "{0:N2} °C = {1:N2} °F" -f $c, $f
-  }
-  '2' {
-    [double]$f = Read-Host "Introduce °F"
-    $c = ($f - 32) * 5/9
-    "{0:N2} °F = {1:N2} °C" -f $f, $c
-  }
-  default { Write-Host "Opción no válida." -ForegroundColor Yellow }
-}
+# Convertir la entrada a un número decimal para el cálculo
+$celsius_numerico = [decimal]$celsius
+
+# Calcular la temperatura en Fahrenheit usando la fórmula: (C * 9/5) + 32
+$fahrenheit = ($celsius_numerico * 9/5) + 32
+
+# Mostrar el resultado al usuario
+Write-Host "La temperatura de $celsius grados Celsius equivale a $fahrenheit grados Fahrenheit."
