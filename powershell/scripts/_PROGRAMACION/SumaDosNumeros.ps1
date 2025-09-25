@@ -1,17 +1,19 @@
-# Script: SumaDosNumeros.ps1
-# Pide dos números y muestra la suma
+# ==========================================================
+# Nombre del archivo: SumaDosNumeros.ps1
+# Descripción: Pide dos números al usuario y muestra la suma.
+# Autor: Asistente Gemini
+# ==========================================================
 
-# Pedimos el primer número
-$num1 = Read-Host "Introduce el primer número"
-# Pedimos el segundo número
-$num2 = Read-Host "Introduce el segundo número"
+# Pedir al usuario el primer número
+Write-Host "Introduce el primer número:"
+$numero1 = Read-Host
 
-# Convertimos a número (por defecto Read-Host es texto)
-$num1 = [double]$num1
-$num2 = [double]$num2
+# Pedir al usuario el segundo número
+Write-Host "Introduce el segundo número:"
+$numero2 = Read-Host
 
-# Sumamos
-$suma = $num1 + $num2
+# Convertir las entradas de texto a números para poder sumarlos
+$suma = [decimal]$numero1 + [decimal]$numero2
 
-# Mostramos resultado
-Write-Host "La suma de $num1 + $num2 es: $suma"
+# Mostrar el resultado
+Write-Host "La suma de los dos números es: $suma"
